@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Dispatch
 
 
 private let dateFormatter: NSDateFormatter = {
@@ -33,7 +34,12 @@ class LocationDetailsViewController: UITableViewController {
     
     @IBAction func done() {
         println("Description '\(descriptionText)'")
-        dismissViewControllerAnimated(true, completion: nil)
+        let hudView = HudView.hudInView(navigationController!.view, animated: true)
+        hudView.text = "Tagged"
+        
+        afterDelay(0.6, {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
     
     @IBAction func cancel() {
@@ -51,6 +57,11 @@ class LocationDetailsViewController: UITableViewController {
             let controller = segue.destinationViewController as CategoryPickerViewController
             controller.selectedCategoryName = categoryName
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        descriptionTextView.frame.size.width = view.frame.size.width - 30
     }
     
     override func viewDidLoad() {
@@ -73,6 +84,18 @@ class LocationDetailsViewController: UITableViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard:"))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    func hideKeyboard(gestureRecognizer: UIGestureRecognizer) {
+        let point = gestureRecognizer.locationInView(tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        
+        if indexPath != nil && indexPath!.section == 0
+            && indexPath!.row == 0 {
+                return
+        }
+        
+        descriptionTextView.resignFirstResponder()
     }
     
     func stringFromPlacemark(placemark: CLPlacemark) -> String {
