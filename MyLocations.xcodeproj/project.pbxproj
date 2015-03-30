@@ -21,6 +21,7 @@
 		5B592A161AC04D63008E8253 /* MyLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B592A151AC04D63008E8253 /* MyLocationsTests.swift */; };
 		5B6472A31AC6BDB100477F74 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B6472A11AC6BDB100477F74 /* DataModel.xcdatamodeld */; };
 		5B6472A71AC6BF9100477F74 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6472A61AC6BF9100477F74 /* Location.swift */; };
+		5B66A5601AC97A7D0028205B /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66A55F1AC97A7D0028205B /* LocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		5B592A151AC04D63008E8253 /* MyLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationsTests.swift; sourceTree = "<group>"; };
 		5B6472A21AC6BDB100477F74 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		5B6472A61AC6BF9100477F74 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		5B66A55F1AC97A7D0028205B /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				5B0F90F71AC6B761006FC372 /* Functions.swift */,
 				5B4FC6541AC6A75300188E69 /* HudView.swift */,
 				5B6472A61AC6BF9100477F74 /* Location.swift */,
+				5B66A55F1AC97A7D0028205B /* LocationCell.swift */,
 				5B4FC64E1AC6A64000188E69 /* LocationDetailsViewController.swift */,
 				5B2DE69E1AC82A150061C45C /* LocationsViewController.swift */,
 				5B592A031AC04D63008E8253 /* Main.storyboard */,
@@ -242,6 +245,7 @@
 				5B592A021AC04D63008E8253 /* SecondViewController.swift in Sources */,
 				5B4FC6551AC6A75300188E69 /* HudView.swift in Sources */,
 				5B0F90F81AC6B761006FC372 /* Functions.swift in Sources */,
+				5B66A5601AC97A7D0028205B /* LocationCell.swift in Sources */,
 				5B5929FE1AC04D63008E8253 /* AppDelegate.swift in Sources */,
 				5B592A001AC04D63008E8253 /* CurrentLocationViewController.swift in Sources */,
 				5B6472A71AC6BF9100477F74 /* Location.swift in Sources */,

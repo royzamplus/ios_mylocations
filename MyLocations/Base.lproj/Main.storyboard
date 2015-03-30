@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="-303"/>
+            <point key="canvasLocation" x="572" y="-300"/>
         </scene>
         <!--Tag Location-->
         <scene sceneID="3lN-tC-TeE">
@@ -274,7 +274,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkj-fP-UK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333" y="-302"/>
+            <point key="canvasLocation" x="1724" y="0.0"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="VF1-3m-BwK">
@@ -313,7 +313,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r7-xt-YiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gxq-4p-oH9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="-300"/>
+            <point key="canvasLocation" x="2214" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -350,7 +350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4m3-Df-E2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="-302"/>
+            <point key="canvasLocation" x="1293" y="0.0"/>
         </scene>
         <!--Locations-->
         <scene sceneID="7uC-0f-8qn">
@@ -361,20 +361,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="xcO-sM-rdO">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="xcO-sM-rdO" customClass="LocationCell" customModule="MyLocations" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcO-sM-rdO" id="uiL-hq-wyX">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qT7-r7-OZ7">
-                                            <rect key="frame" x="15" y="28" width="64" height="21"/>
+                                            <rect key="frame" x="15" y="28" width="297" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TCv-K3-jDf">
-                                            <rect key="frame" x="15" y="8" width="167" height="21"/>
+                                            <rect key="frame" x="15" y="8" width="297" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -382,6 +382,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="qT7-r7-OZ7" id="462-h7-u4X"/>
+                                    <outlet property="descriptionLabel" destination="TCv-K3-jDf" id="KaD-YP-yaI"/>
+                                    <segue destination="JoH-Ho-NAh" kind="modal" identifier="EditLocation" id="mHm-um-1HC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -393,7 +398,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0r-dq-RXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="403"/>
+            <point key="canvasLocation" x="813" y="403"/>
         </scene>
         <!--Locations-->
         <scene sceneID="mnE-5p-mZo">
@@ -421,4 +426,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="wep-Sk-FWZ"/>
+    </inferredMetricsTieBreakers>
 </document>
