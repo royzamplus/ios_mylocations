@@ -30,6 +30,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var getButton: UIButton!
+    @IBOutlet weak var latitudeTextLabel: UILabel!
+    @IBOutlet weak var longitudeTextLabel: UILabel!
     
     @IBAction func getLocation() {
         
@@ -94,10 +96,21 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
     
     func stringFromPlacemark(placemark: CLPlacemark) -> String {
-        return
-            "\(placemark.subThoroughfare) \(placemark.thoroughfare)\n" +
-            "\(placemark.locality) \(placemark.administrativeArea) " +
-            "\(placemark.postalCode)"
+        
+        var line1 = ""
+        line1.addText(placemark.subThoroughfare)
+        line1.addText(placemark.thoroughfare, withSeparator: " ")
+        
+        var line2 = ""
+        line2.addText(placemark.locality)
+        line2.addText(placemark.administrativeArea, withSeparator: " ")
+        line2.addText(placemark.postalCode, withSeparator: " ")
+        
+        if line1.isEmpty {
+            return line2 + "\n "
+        } else {
+            return line1 + "\n" + line2
+        }
     }
     
     func updateLabels() {
@@ -106,6 +119,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             longitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
             tagButton.hidden = false
             messageLabel.text = ""
+            
+            latitudeTextLabel.hidden = false
+            longitudeTextLabel.hidden = false
             
             if let placemark = placemark {
                 addressLabel.text = stringFromPlacemark(placemark)
@@ -121,6 +137,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             longitudeLabel.text = ""
             addressLabel.text = ""
             tagButton.hidden = true
+            
+            latitudeTextLabel.hidden = true
+            longitudeTextLabel.hidden = true
             
             // The new code starts here:
             var statusMessage: String
